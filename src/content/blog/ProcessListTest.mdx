@@ -1,0 +1,65 @@
+---
+title: Process List Test
+description: A test page for the new ProcessList components.
+meta_title: ""
+date: 2022-04-04T05:00:00Z
+image: "/images/image-placeholder.png"
+categories: ["Architecture"]
+author: "John Doe"
+tags: ["silicon", "technology"]
+draft: true
+---
+import ProcessContainer from '@/components/ProcessContainer.astro';
+
+## Process List Test Heading
+### Subheading for Process List Test
+<ProcessContainer steps={[
+  {
+    title: "Complaint",
+    goal: "Know what is wrong.",
+    action: "Observe and document the outward signs of inefficiency or error (e.g., errors, complaints, delays).",
+    color: "red",
+  },
+  {
+    title: "Assessment",
+    goal: "Know how bad the problem is.",
+    action: "Research to measure the scale and scope of the problem.",
+    color: "orange",
+  },
+  {
+    title: "Diagnosis",
+    goal: "Know why the problem is occurring.",
+    action: "Perform Root Cause Analysis to determine the fundamental cause.",
+    color: "amber",
+  },
+  {
+    title: "Treatment Plan",
+    goal: "Determine the best solution.",
+    action: "Brainstorm multiple potential solutions, and select the best one.",
+    color: "green",
+  },
+  {
+    title: "Treatment",
+    goal: "Do the work and observe the process in real-time.",
+    action: "Implement the solution on a small scale (e.g., pilot with one admin staff for a week).",
+    color: "blue",
+  },
+  {
+    title: "Efficacy",
+    goal: "Determine if the change was an improvement.",
+    action: "Review the post-treatment data against the baseline metrics established in Step 1.",
+    color: "teal",
+  },
+  {
+    title: "Integrate",
+    goal: "Lock in the gains and prevent backsliding.",
+    action: "If successful, integrate the new improvement into processes and training. If unsuccessful, return to the Treatment Plan with greater data and understanding.",
+    color: "indigo",
+  },
+  {
+    title: "Iterate",
+    goal: "Ensure the change is continuous.",
+    action: "Repeat for the next problem. If you learned of any other issues or opportunities along this project, make a note of them for future projects.",
+    color: "purple",
+  },
+]} />
