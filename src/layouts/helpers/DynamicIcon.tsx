@@ -21,20 +21,21 @@ const iconLibraries: { [key: string]: IconMap } = {
 };
 
 const DynamicIcon: FC<IDynamicIcon> = ({ icon, ...props }) => {
+  const getIconLibrary = (icon: string): IconMap | undefined => {
+    const libraryKey = icon.substring(0, 2).toLowerCase();
+    return iconLibraries[libraryKey];
+  };
+
   const IconLibrary = getIconLibrary(icon);
-  const Icon = IconLibrary ? IconLibrary[icon] : undefined;
+  // Transform icon name to PascalCase for lookup, e.g., "faRocket" to "FaRocket"
+  const iconName = icon.charAt(0).toUpperCase() + icon.slice(1);
+  const Icon = IconLibrary ? IconLibrary[iconName] : undefined;
 
   if (!Icon) {
     return <span className="text-sm">Icon not found</span>;
   }
 
   return <Icon {...props} />;
-};
-
-const getIconLibrary = (icon: string): IconMap | undefined => {
-  const libraryKey = icon.substring(0, 2).toLowerCase();
-
-  return iconLibraries[libraryKey];
 };
 
 export default DynamicIcon;

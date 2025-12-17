@@ -6,8 +6,6 @@ image: "/images/leroux-headshot.png"
 draft: false
 ---
 
-## Background
-
 I started working in the medical sector 15 years ago, first for a biomedical company, then running a multidisciplinary group practice, and now as a medical practice consultant.
 
 I have a passion for problem solving and continuous improvement, and my bachelor’s degree in Mechatronics Engineering, which offers me a broad set of tools that have been invaluable throughout my career.

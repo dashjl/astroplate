@@ -1,0 +1,63 @@
+---
+title: Feature List Test
+description: A test page for the new FeatureListItem components.
+meta_title: ""
+date: 2022-04-04T05:00:00Z
+image: "/images/image-placeholder.png"
+categories: ["Components"]
+author: "John Leroux"
+tags: ["astro", "component"]
+draft: false
+---
+import FeatureListItem from "@/layouts/components/FeatureListItem.astro";
+
+This is a feature list component, which is a visual component to showcase features.
+
+The `FeatureListItem` component now accepts `color1` and `color2` props to dynamically generate gradients. You can pass any hex color code to these props.
+
+For example: `color1="#3B82F6"` `color2="#8B5CF6"`
+
+<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+  <FeatureListItem
+    title="From zero to launch"
+    text="Whether its a project microsite, a new landing page, or an ambitious new app, choose an Astro partner to help you take your greenfield projects from concept to reality."
+    icon="faRocket"
+    color1="#3B82F6"
+    color2="#8B5CF6"
+  />
+  <FeatureListItem
+    title="Website migration"
+    text="Get professional help updating your website’s tech stack. Switch to Astro’s modern, high performance framework to improve conversion rates and simplify development."
+    icon="faLayerGroup"
+    color1="#3B82F6"
+    color2="#22C55E"
+  />
+  <FeatureListItem
+    title="Code audit"
+    text="Get expert eyes on your Astro code base. Our partners can ensure your Astro website is using the best approaches for website performance and development velocity."
+    icon="FaListCheck"
+    color1="#EF4444"
+    color2="#EC4899"
+  />
+  <FeatureListItem
+    title="E-commerce"
+    text="Get Astro’s first-in-class performance for your online store. Studies show milliseconds count and our partners can help you get the most out of Astro’s powerful features."
+    icon="faStore"
+    color1="#F97316"
+    color2="#EAB308"
+  />
+  <FeatureListItem
+    title="Custom integrations"
+    text="Integration specialists can help you develop Astro tools for your service. If you need Astro support for your users or products, our partners can help."
+    icon="faPlug"
+    color1="#8B5CF6"
+    color2="#22C55E"
+  />
+  <FeatureListItem
+    title="SEO best practices"
+    text="Ensure your website is search-engine optimized with expert analysis and advice on best practices from an Astro partner."
+    icon="faMagnifyingGlass"
+    color1="#3B82F6"
+    color2="#22C55E"
+  />
+</ul>
