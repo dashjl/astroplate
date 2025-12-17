@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Lean Practice",
-    "base_url": "https://leanpractice.com",
+    "base_url": "https://leanpractice.ca",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -40,8 +40,8 @@
   },
 
   "google_tag_manager": {
-    "enable": false,
-    "gtm_id": "GTM-XXXXXX"
+    "enable": true,
+    "gtm_id": "GTM-M99QJFLM"
   },
 
   "disqus": {
