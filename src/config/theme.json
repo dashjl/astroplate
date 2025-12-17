@@ -12,6 +12,12 @@
         "text": "#444444",
         "text_dark": "#040404",
         "text_light": "#717171"
+      },
+      "background": {
+        "base": "#787878",
+        "radial_gradient_1": "#3245ff44",
+        "blob_1": "#002aff",
+        "blob_2": "#002aff"
       }
     },
     "darkmode": {
@@ -26,6 +32,12 @@
         "text": "#B4AFB6",
         "text_dark": "#fff",
         "text_light": "#B4AFB6"
+      },
+      "background": {
+        "base": "#787878",
+        "radial_gradient_1": "#3245ff44",
+        "blob_1": "#002aff",
+        "blob_2": "#002aff"
       }
     }
   },

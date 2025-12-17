@@ -1,0 +1,47 @@
+---
+title: "What are your Core Values?"
+meta_title: ""
+description: "this is meta description"
+date: 2022-04-04T05:00:00Z
+image: "/images/foggy-glasses.png"
+categories: ["Vision"]
+author: "John Doe"
+tags: ["Vision", "Goals"]
+draft: false
+---
+
+ACT Values (from Acceptance and Commitment Therapy) are your heart's deepest desires for how you want to behave as a human being. They are not goals you check off (like "get promoted") but rather the ongoing qualities you want to bring to your actions (like "to be a supportive teammate"). They are life directions, not destinations.
+
+
+## Why Are Values Important?
+Clarifying your values is the essential first step toward a fulfilling life. They serve as a powerful filter for filtering, setting goals, and making decisions:
+
+* **Filtering Decisions:** Values act as your personal compass. When faced with a choice, you ask: "Does this action move me toward or away from the person I want to be in this domain?" This makes difficult decisions clearer and faster.
+
+* **Setting Goals:** Goals that are aligned with your values (known as Committed Action) are intrinsically motivating. They shift your focus from avoiding discomfort to pursuing a meaningful life.
+
+* **Prioritizing Efforts:** Values clarify where you should invest your finite time and energy. Knowing your most important domains helps you say "no" to things that drain you and "yes" to actions that align with your purpose.
+
+## Clarifying Your Core Life Domains
+
+It can be challenging to clearly identify and prioritize your core values. This tool helps to break down the problem by comparing values in pairs, making it easier to see which ones resonate more strongly with you.
+
+<RankOrderSorter client:load
+itemsToSort={[
+    { name: "Family", description: "To build and maintain close, loving, and supportive relationships with family members.", icon: "👨‍👩‍👧‍👦" },
+    { name: "Partner", description: "To be a loving, supportive, and engaged partner in a committed relationship.", icon: "❤️" },
+    { name: "Parenting", description: "To raise children who are happy, healthy, and well-adjusted, and to be a nurturing and guiding presence in their lives.", icon: "👨‍👧‍👦" },
+    { name: "Career", description: "To engage in meaningful work that aligns with your skills and passions, contributing positively to your field or community.", icon: "💼" },
+    { name: "Learning", description: "To continuously learn, grow, and develop new skills and knowledge, both personally and professionally.", icon: "📚" },
+    { name: "Play", description: "To engage in activities that bring joy, relaxation, and a sense of fun, fostering a balanced and enjoyable life.", icon: "🎉" },
+    { name: "Spirituality", description: "To connect with a sense of purpose, meaning, or a higher power, fostering inner peace and a deeper understanding of life.", icon: "🙏" },
+    { name: "Community", description: "To contribute to the well-being of your community, fostering connections and working towards a better collective future.", icon: "🏘️" },
+    { name: "Self-Care", description: "To prioritize your physical, mental, and emotional health, ensuring you have the energy and resilience to live fully.", icon: "🧘‍♀️" },
+    { name: "Friends", description: "To cultivate and maintain strong, supportive, and enjoyable friendships.", icon: "🤝" },
+    { name: "Environment", description: "To live in a way that respects and protects the natural world, contributing to sustainability and ecological balance.", icon: "🌳" },
+    { name: "Art", description: "To appreciate, create, or engage with art, music, and beauty in all its forms, enriching your life with aesthetic experiences.", icon: "🎨" }
+]}
+questionToAsk="Which value is more important to you?" 
+completionText="Your Ranked Values:" />
+
+import RankOrderSorter from '@/components/RankOrder.jsx';

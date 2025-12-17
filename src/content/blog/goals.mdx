@@ -1,0 +1,32 @@
+---
+title: "What are your goals?"
+meta_title: ""
+description: "this is meta description"
+date: 2022-04-04T05:00:00Z
+image: "/images/lighthouse.png"
+categories: ["Vision"]
+author: "John Leroux"
+tags: ["technology", "tailwind"]
+draft: false
+---
+
+import QuizWrapper from '@/components/QuizWrapper.jsx';
+
+As the leader, your goals set the tone and direction for your practice. Having clarity of your goals and priorities allows you to take committed action in alignment with what matters most to you. It also provides a connsistent mental model for your team, aiding their ability to make the right decisions without needing your input for every little thing.
+
+<QuizWrapper client:load
+    itemsToSort={[
+        { name: "Impact", description: "Grow your practice to help more patients", icon: "🌍" },
+        { name: "Agency", description: "Dedicate more time to the work you love, and less to the work you don’t.", icon: "🙋‍♀️" },
+        { name: "Practicing", description: "Return to your roots and see more patients", icon: "🩺" },
+        { name: "Wealth", description: "Improve profitability to increase your compensation", icon: "💰" },
+        { name: "Vacation", description: "The ability to actually unplug, turn off your phone, and take days or weeks off", icon: "🌴" },
+        { name: "Development", description: "Devote more time to reading, learning, and studying to develop your skills", icon: "📚" },
+        { name: "Calm", description: "Drastically reduce operational chaos so that you are not needed to drop everything to extinguish daily fires.", icon: "🧘" },
+        { name: "Flexibility", description: "The ability to work shorter days, shorter weeks, take days off, or work from home", icon: "⚖️" },
+        { name: "Stability", description: "Tame the highs and lows to have more consistent compensation", icon: "📈" },
+        { name: "Team", description: "Build your team by attracting, training, and retaining talented staff.", icon: "👥" }
+    ]}
+    questionToAsk="Which goal is more important to you?"
+    completionText="Your Ranked Goals:"
+/>

@@ -12,7 +12,14 @@ const config = {
     'bg-amber-600', 'dark:bg-amber-500', 'bg-amber-500', 'dark:bg-amber-400',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'background-base': 'var(--background-base)',
+        'background-radial-gradient-1': 'var(--background-radial-gradient-1)',
+        'background-blob-1': 'var(--background-blob-1)',
+        'background-blob-2': 'var(--background-blob-2)',
+      }
+    },
   },
   plugins: [],
 };

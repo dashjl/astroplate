@@ -33,11 +33,33 @@ export const titleify = (content: string) => {
 
 // plainify
 export const plainify = (content: string) => {
-  const parseMarkdown: any = marked.parse(content);
-  const filterBrackets = parseMarkdown.replace(/<\/?[^>]+(>|$)/gm, "");
-  const filterSpaces = filterBrackets.replace(/[\r\n]\s*[\r\n]/gm, "");
-  const stripHTML = htmlEntityDecoder(filterSpaces);
-  return stripHTML;
+  if (!content) {
+    return "";
+  }
+  // Remove import statements
+  let plain = content.replace(/^import\s+.*?\s+from\s+['"].*['"];?/gm, "");
+  // Remove MDX/HTML tags
+  plain = plain.replace(/<[^>]*>/g, "");
+  // Remove markdown images
+  plain = plain.replace(/!\[.*?\]\(.*?\)/g, "");
+  // Remove markdown links
+  plain = plain.replace(/\[(.*?)\]\(.*?\)/g, "$1");
+  // Remove markdown headings
+  plain = plain.replace(/#{1,6}\s/g, "");
+  // Remove markdown blockquotes
+  plain = plain.replace(/>\s/g, "");
+  // Remove markdown horizontal rules
+  plain = plain.replace(/---/g, "");
+  // Remove markdown code blocks
+  plain = plain.replace(/`{3}[\s\S]*?`{3}/g, "");
+  // Remove markdown inline code
+  plain = plain.replace(/`/g, "");
+  // Remove markdown bold/italic
+  plain = plain.replace(/(\*\*|__|\*|_)/g, "");
+  // Remove extra newlines
+  plain = plain.replace(/\n{2,}/g, "\n");
+
+  return plain.trim();
 };
 
 // strip entities for plainify

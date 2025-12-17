@@ -4,10 +4,10 @@ meta_title: ""
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 date: 2022-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
-categories: ["Architecture"]
-author: "John Doe"
+categories: ["Components"]
+author: "John Leroux"
 tags: ["silicon", "technology"]
-draft: true
+draft: false
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

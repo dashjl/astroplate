@@ -1,9 +1,16 @@
 ---
-title: "Lean Practice"
-meta_title: "About"
-description: "this is meta description"
+title: John Leroux
+email: john@leanpractice.ca
 image: "/images/leroux-headshot.png"
-draft: false
+description: John Leroux
+social:
+  - name: github
+    icon: FaGithub
+    link: https://github.com/dashjl
+
+  - name: linkedin
+    icon: FaLinkedin
+    link: https://linkedin.com/lerouxje
 ---
 
 ## Background
@@ -16,10 +23,3 @@ I got into the clinical practice space when I joined a group mental health pract
 
 I brought my toolkit from my past roles in quality control, process automation, and continuous improvement and set to work. We automated, delegated and eliminated tasks to reduce the owner’s workload by over 40%, tasks that weren’t driving their passion or their practice. We improved client care and satisfaction, staff compensation and retention, all the while reducing  improving profitability. Then when the founder was ready for their next chapter, I negotiated a successful exit from the company. This transformation was driven by a focus on the philosophy of Lean and the Kaizen methodology of continuous improvement at every layer of the organization.
 
-## How I Can Help
-
-For the past five years, I have applied this systematic approach to help medical and paramedical practices tame their clinics, so you can get back to why you started your practice. I believe what’s good for you, and what’s good for your team, is good for your patients. Taking care of yourself and your team is the way to bring out the best in them, which is what your patients need and deserve.
-
-## Want to Learn More?
-
-Schedule a free 30-minute meeting to discuss your business and your vision for the future.  
