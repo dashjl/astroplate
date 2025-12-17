@@ -1,7 +1,7 @@
 ---
 title: "Blog Posts"
 meta_title: ""
-description: "this is meta description"
+description: "Lean Practice Blog Posts"
 image: ""
 draft: false
 ---

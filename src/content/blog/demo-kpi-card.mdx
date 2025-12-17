@@ -1,0 +1,55 @@
+---
+title: KPI Card Test
+description: A test page for the new KPI Card components.
+meta_title: ""
+date: 2022-04-04T05:00:00Z
+image: "/images/image-placeholder.png"
+categories: ["Components"]
+author: "John Leroux"
+tags: ["astro", "component"]
+draft: false
+---
+import KpiCard from "@/layouts/components/KpiCard.tsx";
+
+This is a demonstration of the new KPI Card component. The component is built with React and Tailwind CSS, and it is used within an Astro project.
+
+<div class="container mx-auto py-20 px-8">
+  <div class="flex justify-between md:items-center mb-6">
+    <div>
+      <h2 class="font-bold text-2xl">Intake Funnel</h2>
+      <p class="font-normal text-gray-600 md:w-full w-4/5">
+        Previous Month's intake funnel metrics
+      </p>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center md:gap-2.5 gap-4">
+    <KpiCard
+        title="Website Visitors"
+        change="12%"
+        value="12,345"
+        color="green"
+        icon="up"
+    />
+    <KpiCard
+        title="Contact Conversions"
+        change="16%"
+        value="432"
+        color="green"
+        icon="up"
+    />
+    <KpiCard
+        title="Free Consultations"
+        change="10%"
+        value="60"
+        color="red"
+        icon="down"
+    />
+    <KpiCard
+        title="New Patients"
+        change="5%"
+        value="50"
+        color="green"
+        icon="up"
+    />
+  </div>
+</div>
