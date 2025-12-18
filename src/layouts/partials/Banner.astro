@@ -1,0 +1,56 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+export interface Props {
+  title: string;
+  content: string;
+  image: string;
+  buttonEnable: boolean;
+  buttonLabel: string;
+  buttonLink: string;
+}
+
+const { title, content, image, buttonEnable, buttonLabel, buttonLink } = Astro.props;
+---
+
+<section class="section pt-14">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-7 md:col-9 mb-8 text-center">
+        <h1
+          set:html={markdownify(title)}
+          class="mb-4 text-h3 lg:text-h1"
+        />
+        <p set:html={markdownify(content)} class="mb-8" />
+        {
+          buttonEnable && (
+            <a
+              class="btn btn-primary"
+              href={buttonLink}
+              target={
+                buttonLink.startsWith("http") ? "_blank" : "_self"
+              }
+              rel="noopener"
+            >
+              {buttonLabel}
+            </a>
+          )
+        }
+      </div>
+      {
+        image && (
+          <div class="col-12">
+            <ImageMod
+              src={image}
+              height={380}
+              width={1200}
+              alt="banner"
+              format="webp"
+            />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
