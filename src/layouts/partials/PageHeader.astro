@@ -4,14 +4,9 @@ import { humanize } from "@/lib/utils/textConverter";
 
 const { title = "" }: { title?: string } = Astro.props;
 ---
-
 <section>
-  <div class="container text-center">
-    <div
-      class="rounded-2xl bg-linear-to-b from-body to-light px-8 py-14 dark:from-darkmode-body dark:to-darkmode-light"
-    >
-      <h1 set:text={humanize(title)} />
-      <Breadcrumbs className="mt-6" />
-    </div>
+  <div class="container text-center">   
+    <h1 class="text-2xl font-bold md:text-3xl" set:text={humanize(title)} />
+      <Breadcrumbs className="mb-2 text-sm" />   
   </div>
 </section>

@@ -8,6 +8,7 @@ import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import sharp from "sharp";
 import config from "./src/config/config.json";
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,13 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
+  output: 'server', // 'static' or 'server' to enable server-side rendering for API routes
+  
+  // Add the Cloudflare adapter with imageService config
+  adapter: cloudflare({
+    imageService: "compile",
+    //sessionKVBindingName: false
+  }), 
   vite: {
     plugins: [
       tailwindcss(),

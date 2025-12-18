@@ -4,6 +4,7 @@ import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { render } from "astro:content";
+import PageHeader from "@/partials/PageHeader.astro";
 
 const aboutIndex = await getListPage("about", "-index");
 const { Content } = await render(aboutIndex);
@@ -20,6 +21,7 @@ if (aboutIndex.data.draft) {
   description={description}
   image={image}
 >
+<PageHeader title={"About"} />
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">

@@ -7,6 +7,9 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import { slugify } from "@/lib/utils/textConverter";
 import { render } from "astro:content";
 
+// enable prerendering, required for static paths with SSR
+export const prerender = true;
+
 // get all static paths for authors
 export async function getStaticPaths() {
   const COLLECTION_FOLDER = "authors";

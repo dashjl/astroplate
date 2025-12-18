@@ -4,6 +4,10 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 import { render } from "astro:content";
 
+
+// enable prerendering, required for static paths with SSR
+export const prerender = true;
+
 // get static paths for all pages
 export async function getStaticPaths() {
   const COLLECTION_FOLDER = "pages";
@@ -25,6 +29,7 @@ const { Content } = await render(page);
 ---
 
 <Base
+  <PageHeader title={title} />
   title={title}
   meta_title={meta_title}
   description={description}

@@ -27,7 +27,7 @@ const { title, text, icon, color1, color2 } = Astro.props;
           "from-(--color-1)/25 to-(--color-2)/25",
         ]}
       >
-        <DynamicIcon icon={icon} className="size-5 lg:size-7" />
+        <DynamicIcon icon={icon} className="size-5 lg:size-7" client:visible />
       </div>
     </div>
     <div class="">

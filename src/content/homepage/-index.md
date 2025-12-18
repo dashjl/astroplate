@@ -1,13 +1,13 @@
 ---
-# Banner
-banner:
-  title: "Stop letting your practice control you. Take back control."
-  content: "If you don’t have control of your business, then your business has control of you. I've been there. And I'm here to tell you, it doesn't have to be this way. I joined a practice with an owner in the midst of burnout, and over the course of six months we reduced his hours by over 40% and gave him time to recover. Once he was rested he wanted to resume his original goal of providing a better practice for both clinicians and patients, and he wanted to grow. Over the next two years we grew revenue by 175%, profits by 488%, while reducing his hours by an additional 25%. At the same time we improved clinician training programs, satisfaction, compensation, and retention, and as a result patient outcomes and satisfaction. We didn’t succeed at the expense of our team, we succeeded with our team."
-  image: "/images/banner-2.png"
-  button:
-    enable: true
-    label: "Book a free 30 minute Meet and Greet"
-    link: "#"
+# Banners
+banners:
+  - title: "Stop letting your practice control you. Take back control."
+    content: "If you don’t have control of your business, then your business has control of you. I've been there. And I'm here to tell you, it doesn't have to be this way. I joined a practice with an owner in the midst of burnout, and over the course of six months we reduced his hours by over 40% and gave him time to recover. Once he was rested he wanted to resume his original goal of providing a better practice for both clinicians and patients, and he wanted to grow. Over the next two years we grew revenue by 175%, profits by 488%, while reducing his hours by an additional 25%. At the same time we improved clinician training programs, satisfaction, compensation, and retention, and as a result patient outcomes and satisfaction. We didn’t succeed at the expense of our team, we succeeded with our team."
+    image: "/images/mountain-vista-cropped.png"
+    button:
+      enable: true
+      label: "Book a free 30 minute Meet and Greet"
+      link: "#"
 
 # Features
 features:
