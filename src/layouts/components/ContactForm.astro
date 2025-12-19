@@ -1,0 +1,96 @@
+---
+---
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto md:col-10 lg:col-6">
+        <form id="contactForm" method="POST">
+          <div class="mb-6">
+            <label for="name" class="form-label">
+              Full Name <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="name"
+              name="name"
+              class="form-input"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="form-label">
+              Email <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              class="form-input"
+              type="email"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="form-label">
+              Message <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input"
+              required
+              rows="8"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <div id="formStatus" class="text-center mt-4"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formStatus = document.getElementById('formStatus');
+
+    if (formStatus) {
+      formStatus.textContent = 'Sending...';
+      formStatus.className = 'text-center mt-4 text-gray-600';
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        if (formStatus) {
+          formStatus.textContent = 'Message sent successfully!';
+          formStatus.className = 'text-center mt-4 text-green-600';
+        }
+        form.reset();
+      } else {
+        if (formStatus) {
+          formStatus.textContent = `Error: ${result.message || 'Something went wrong.'}`;
+          formStatus.className = 'text-center mt-4 text-red-600';
+        }
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      if (formStatus) {
+        formStatus.textContent = 'An unexpected error occurred.';
+        formStatus.className = 'text-center mt-4 text-red-600';
+      }
+    }
+    });
+  }
+</script>

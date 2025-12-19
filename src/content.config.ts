@@ -62,13 +62,7 @@ const aboutCollection = defineCollection({
   }),
 });
 
-// contact collection schema
-const contactCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/contact" }),
-  schema: z.object({
-    ...commonFields,
-  }),
-});
+
 
 const bannerSchema = z.object({
   title: z.string(),
@@ -98,7 +92,7 @@ const homepageCollection = defineCollection({
           link: z.string(),
         }),
       }),
-    ),
+    ).optional(),
   }),
 });
 
@@ -150,7 +144,6 @@ export const collections = {
   authors: authorsCollection,
   pages: pagesCollection,
   about: aboutCollection,
-  contact: contactCollection,
 
   // sections
   ctaSection: ctaSectionCollection,

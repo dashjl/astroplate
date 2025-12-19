@@ -1,0 +1,23 @@
+---
+layout: "@/layouts/Base.astro"
+title: "Booking"
+description: "Book a consultation with us"
+---
+
+import PageHeader from "@/partials/PageHeader.astro";
+import CalComEmbed from '@/layouts/components/CalComEmbed.jsx';
+
+<PageHeader title="Booking" />
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-10">
+        <div class="content">
+          ## Ready to Book a Consultation?
+          <CalComEmbed client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
