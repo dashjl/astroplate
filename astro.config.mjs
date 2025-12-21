@@ -18,9 +18,8 @@ export default defineConfig({
   
   // Add the Cloudflare adapter with imageService config
   adapter: cloudflare({
-    imageService: "compile",
     //sessionKVBindingName: false
-  }), 
+  }),
   vite: {
     plugins: [
       tailwindcss(),
