@@ -15,11 +15,12 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   output: 'server', // 'static' or 'server' to enable server-side rendering for API routes
-  
+ 
   // Add the Cloudflare adapter with imageService config
-  adapter: cloudflare({
+ adapter: cloudflare({
+    imageService: "compile",
     //sessionKVBindingName: false
-  }),
+  }), 
   vite: {
     plugins: [
       tailwindcss(),

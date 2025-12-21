@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 /**
  * ProcessStep Component
  * Renders a single step in a vertical process list.
@@ -7,7 +6,7 @@ import { Image } from 'astro:assets';
  * @param {string} title - The title of the step.
  * @param {string} goal - The goal description for the step.
  * @param {string} action - The action description for the step.
- * @param {object} [icon] - The SVG icon for the step (optional, expected to be an Astro image object).
+ * @param {object} [icon] - The icon for the step (optional, expected to be an object with src, width, height).
  * @param {string} [color='indigo'] - A base color name (e.g., 'indigo', 'teal', 'blue') for styling.
  * @param {number} stepNumber - The sequential number of the step.
  * @param {boolean} isLast - True if this is the last step, to hide the connecting line.
@@ -28,7 +27,7 @@ const lineColor = `bg-${color}-500 dark:bg-${color}-400`;
   <!-- Numbered Circle with Icon -->
   <div class:list={["absolute top-0 left-0 flex size-16 items-center justify-center rounded-full text-white font-bold text-xl", circleBgColor]}>
     {icon ? (
-      <Image src={icon} alt={`Step ${stepNumber}`} width={icon.width} height={icon.height} class="size-6 text-white" aria-hidden="true" />
+      <img src={icon.src} alt={`Step ${stepNumber}`} width={icon.width} height={icon.height} class="size-6 text-white" aria-hidden="true"></img>
     ) : (
       <span>{stepNumber}</span>
     )}
