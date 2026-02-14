@@ -14,10 +14,13 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   output: 'server', // 'static' or 'server' to enable server-side rendering for API routes
+  image: {
+    service: { entrypoint: 'astro/assets/services/passthrough' },
+  },
 
   // Add the Cloudflare adapter with imageService config
   adapter: cloudflare({
-    imageService: "compile",
+    imageService: "passthrough",
   }),
   vite: {
     plugins: [
