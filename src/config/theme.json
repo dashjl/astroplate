@@ -1,4 +1,25 @@
 {
+  "_docs": {
+    "theme_color": {
+      "primary": "Buttons, nav links, hover states, tags, pagination",
+      "body": "Page background, header background, modal backgrounds",
+      "border": "All borders throughout the site",
+      "light": "Footer, cards, sidebar backgrounds",
+      "dark": "Dark accents"
+    },
+    "text_color": {
+      "text": "Default body text",
+      "text_dark": "Headings and dark text",
+      "text_light": "Muted or secondary text"
+    },
+    "background": {
+      "base": "Main fixed background in Background.astro",
+      "radial_gradient_1": "Gradient start (center of header)",
+      "radial_gradient_2": "Gradient end (fades to this color)",
+      "blob_1": "Top-right decorative blurred circle",
+      "blob_2": "Bottom-left decorative blurred circle"
+    }
+  },
   "colors": {
     "default": {
       "theme_color": {
@@ -14,8 +35,9 @@
         "text_light": "#717171"
       },
       "background": {
-        "base": "#d1d5db",
-        "radial_gradient_1": "#3b82f6",
+        "base": "#d1943f",
+        "radial_gradient_1": "#bfcaff",
+        "radial_gradient_2": "#f2f2f2",
         "blob_1": "#2563eb",
         "blob_2": "#3b82f6"
       }
@@ -36,6 +58,7 @@
       "background": {
         "base": "#787878",
         "radial_gradient_1": "#3245ff44",
+        "radial_gradient_2": "#292828",
         "blob_1": "#002aff",
         "blob_2": "#002aff"
       }

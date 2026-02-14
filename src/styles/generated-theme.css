@@ -15,6 +15,13 @@
   --color-text-dark: #040404;
   --color-text-light: #717171;
 
+  /* === Background Colors === */
+  --background-base: #d1943f;
+  --background-radial-gradient-1: #bfcaff;
+  --background-radial-gradient-2: #f2f2f2;
+  --background-blob-1: #2563eb;
+  --background-blob-2: #3b82f6;
+
   /* === Darkmode Colors === */
   --color-darkmode-primary: #fff;
   --color-darkmode-body: #1c1c1c;
@@ -24,6 +31,13 @@
   --color-darkmode-text: #B4AFB6;
   --color-darkmode-text-dark: #fff;
   --color-darkmode-text-light: #B4AFB6;
+
+  /* === Darkmode Background Colors === */
+  --background-darkmode-base: #787878;
+  --background-darkmode-radial-gradient-1: #3245ff44;
+  --background-darkmode-radial-gradient-2: #292828;
+  --background-darkmode-blob-1: #002aff;
+  --background-darkmode-blob-2: #002aff;
 
   /* === Font Families === */
   --font-primary: Heebo, sans-serif;
@@ -45,3 +59,12 @@
   --text-h1: 2.9859839999999997rem;
   --text-h1-sm: 2.6873856rem;
 }
+
+  /* === Dark Mode Background Overrides === */
+  .dark {
+    --background-base: #787878;
+    --background-radial-gradient-1: #3245ff44;
+    --background-radial-gradient-2: #292828;
+    --background-blob-1: #002aff;
+    --background-blob-2: #002aff;
+  }

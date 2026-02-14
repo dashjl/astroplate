@@ -45,6 +45,21 @@ function addColorsToCss(cssLines, colors, prefix = "") {
 }
 
 /**
+ * Add background color entries to CSS array with --background- prefix
+ * @param {Array} cssLines - Array of CSS lines to append to
+ * @param {Object} colors - Color object to process
+ * @param {string} prefix - Optional prefix (e.g., "darkmode" for --darkmode-background-)
+ */
+function addBackgroundColorsToCss(cssLines, colors, prefix = "") {
+  Object.entries(colors).forEach(([key, value]) => {
+    const colorName = prefix
+      ? `--background-${prefix}-${toKebab(key)}`
+      : `--background-${toKebab(key)}`;
+    cssLines.push(`  ${colorName}: ${value};`);
+  });
+}
+
+/**
  * Generate theme CSS from theme.json configuration
  * @throws {Error} If theme.json is missing or invalid
  */
@@ -87,6 +102,12 @@ function generateThemeCSS() {
       addColorsToCss(cssLines, themeConfig.colors.default.text_color);
     }
 
+    // Add default background colors
+    if (themeConfig.colors.default?.background) {
+      cssLines.push("", "  /* === Background Colors === */");
+      addBackgroundColorsToCss(cssLines, themeConfig.colors.default.background);
+    }
+
     // Add darkmode colors (if available)
     if (themeConfig.colors.darkmode) {
       cssLines.push("", "  /* === Darkmode Colors === */");
@@ -103,6 +124,16 @@ function generateThemeCSS() {
         addColorsToCss(
           cssLines,
           themeConfig.colors.darkmode.text_color,
+          "darkmode",
+        );
+      }
+
+      // Add darkmode background colors
+      if (themeConfig.colors.darkmode.background) {
+        cssLines.push("", "  /* === Darkmode Background Colors === */");
+        addBackgroundColorsToCss(
+          cssLines,
+          themeConfig.colors.darkmode.background,
           "darkmode",
         );
       }
@@ -135,6 +166,16 @@ function generateThemeCSS() {
     }
 
     cssLines.push("}");
+
+    // Add dark mode background variable overrides
+    if (themeConfig.colors.darkmode?.background) {
+      cssLines.push("", "  /* === Dark Mode Background Overrides === */");
+      cssLines.push("  .dark {");
+      Object.entries(themeConfig.colors.darkmode.background).forEach(([key, value]) => {
+        cssLines.push(`    --background-${toKebab(key)}: ${value};`);
+      });
+      cssLines.push("  }");
+    }
 
     // Ensure output directory exists
     const outputDir = path.dirname(outputPath);
