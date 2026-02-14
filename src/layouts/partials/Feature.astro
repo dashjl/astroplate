@@ -1,12 +1,16 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
+import DynamicIcon from "@/layouts/helpers/DynamicIcon.tsx";
 import { markdownify } from "@/lib/utils/textConverter";
 import { FaCheck } from "react-icons/fa";
 
 export interface FeatureProps {
   title: string;
-  image: string;
+  image?: string;
   content: string;
+  icon?: string;
+  color1?: string;
+  color2?: string;
   bulletpoints: string[];
   button: {
     enable: boolean;
@@ -27,15 +31,38 @@ const { feature, index } = Astro.props;
   <div class="container">
     <div class="row items-center justify-between">
       <div
-        class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
+        class={`mb:md-0 mb-6 md:col-5 flex justify-center ${index % 2 !== 0 && "md:order-2"}`}
       >
-        <ImageMod
-          src={feature.image}
-          height={480}
-          width={520}
-          alt={feature.title}
-          format="webp"
-        />
+        {feature.image && (
+          <ImageMod
+            src={feature.image}
+            height={480}
+            width={520}
+            alt={feature.title}
+            format="webp"
+          />
+        )}
+        {feature.icon && (
+          <div
+            style={`--color-1: ${feature.color1}; --color-2: ${feature.color2};`}
+            class:list={[
+              "size-fit rounded-full p-0.5 lg:p-0.75",
+              "bg-linear-to-r from-(--color-1) to-(--color-2)",
+            ]}
+          >
+            <div
+              class:list={[
+                "size-20 lg:size-40 grid place-content-center text-white rounded-full bg-black bg-linear-to-br",
+                "from-(--color-1)/25 to-(--color-2)/25",
+              ]}
+            >
+              <DynamicIcon icon={feature.icon} className="size-10 lg:size-20" client:visible />
+            </div>
+          </div>
+        )}
+        <script is:inline>
+          console.log(`Feature ${JSON.stringify(feature.title)} - Image: ${!!feature.image}, Icon: ${!!feature.icon}`);
+        </script>
       </div>
       <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
         <h2 set:html={markdownify(feature.title)} class="mb-4" />

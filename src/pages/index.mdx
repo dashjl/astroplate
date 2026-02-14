@@ -3,7 +3,6 @@ layout: "@/layouts/Base.astro"
 ---
 
 import Banner from "@/partials/Banner.astro";
-import CallToAction from "@/partials/CallToAction.astro";
 import Feature from "@/partials/Feature.astro";
 // import Testimonial from "@/partials/Testimonial.astro";
 
@@ -20,7 +19,9 @@ import Feature from "@/partials/Feature.astro";
   index={0}
   feature={{
     title: "Why did you start your practice?",
-    image: "/images/service-1.png",
+    icon: "MdOutlineLightbulb",
+    color1: "#88aedb",
+    color2: "#9fdfe9",
     content: "",
     bulletpoints: [
       "Was it to have more control of your schedule?",
@@ -41,7 +42,9 @@ import Feature from "@/partials/Feature.astro";
   index={1}
   feature={{
     title: "Did you realize running a practice would be this hard?",
-    image: "/images/service-2.png",
+    icon: "FaBatteryQuarter",
+    color1: "#9fdfe9",
+    color2: "#8bc3a8",
     content: "",
     bulletpoints: [
       "Are you working longer hours than you were before, but making less?",
@@ -61,7 +64,9 @@ import Feature from "@/partials/Feature.astro";
   index={2}
   feature={{
     title: "My Mission",
-    image: "/images/service-3.png",
+    icon: "FaSeedling",
+    color1: "#8bc3a8",
+    color2: "#88aedb",
     content: "I have a background in engineering, but found my passion when I pivoted from helping big companies produce parts more profitably to helping medical and paramedical practices to help their patients. The reality for most practices is time is very limited, and they're lucky to find a few hours a month to spend thinking about how to improve how they do things. I've spent my entire career on efficiency, and the past 5 years focused solely on helping practices to accomplish their goals more efficiently. I have consumed countless books, podcasts, and blog posts on this topic, so you don't have to. I have gotten to see what works across an industry, to help you tame your business, so you can focus on what matters: your patients. I believe what's good for you, and what's good for your team, is good for your patients. Taking care of yourself and your team is the way to bring out the best in them, which is what your patients need and deserve.",
     bulletpoints: [],
     button: {
@@ -108,18 +113,19 @@ import Feature from "@/partials/Feature.astro";
   }}
 /> */}
 
-<CallToAction
-  call_to_action={{
-    data: {
+<Feature
+  index={3}
+  feature={{
+    title: "Ready to stop putting out fires?",
+    icon: "FaFireExtinguisher",
+    color1: "#8bc3a8",
+    color2: "#88aedb",
+    content: "Build the practice you dreamed off, for your patients, your clinicians, your staff, and yourself",
+    bulletpoints: [],
+    button: {
       enable: true,
-      title: "Ready to stop putting out fires?",
-      image: "/images/call-to-action.png",
-      description: "Build the practice you dreamed off, for your patients, your clinicians, your staff, and yourself",
-      button: {
-        enable: true,
-        label: "Get Started Now",
-        link: "/contact"
-      }
+      label: "Get Started Now",
+      link: "/contact"
     }
   }}
 />

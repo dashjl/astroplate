@@ -14,10 +14,10 @@
         "text_light": "#717171"
       },
       "background": {
-        "base": "#787878",
-        "radial_gradient_1": "#3245ff44",
-        "blob_1": "#002aff",
-        "blob_2": "#002aff"
+        "base": "#d1d5db",
+        "radial_gradient_1": "#3b82f6",
+        "blob_1": "#2563eb",
+        "blob_2": "#3b82f6"
       }
     },
     "darkmode": {
