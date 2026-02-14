@@ -5,16 +5,20 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
-import sharp from "sharp";
 import config from "./src/config/config.json";
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: sharp() },
-  output: 'static', // Generate static HTML for better image optimization
+  output: 'server', // 'static' or 'server' to enable server-side rendering for API routes
+
+  // Add the Cloudflare adapter with imageService config
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
   vite: {
     plugins: [
       tailwindcss(),
