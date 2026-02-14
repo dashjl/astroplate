@@ -5,6 +5,7 @@ layout: "@/layouts/Base.astro"
 import Banner from "@/partials/Banner.astro";
 import CallToAction from "@/partials/CallToAction.astro";
 import Feature from "@/partials/Feature.astro";
+import FeatureList from "@/partials/FeatureList.astro";
 // import Testimonial from "@/partials/Testimonial.astro";
 
 <Banner
@@ -16,25 +17,54 @@ import Feature from "@/partials/Feature.astro";
   buttonLink="/contact"
 />
 
-<Feature
-  index={0}
-  feature={{
-    title: "Why did you start your practice?",
-    image: "/images/service-1.png",
-    content: "",
-    bulletpoints: [
-      "Was it to have more control of your schedule?",
-      "To improve the quality of patient care?",
-      "To have a better work culture?",
-      "To have more control of the presenting issues you work with?",
-      "To earn a higher income?"
-    ],
-    button: {
-      enable: false,
-      label: "",
-      link: "#"
+<FeatureList
+  feature = {0}
+  title = "Why did you start your practice?"
+  columns="3"
+  features={[
+    {
+      title: "Control of your schedule",
+      text: "Running a practice shouldn't mean sacrificing your personal life. Gain the freedom to set your own hours and create a work-life balance that works for you and your team.",
+      icon: "faCalendarDays",
+      color1: "#3B82F6",
+      color2: "#8B5CF6"
+    },
+    {
+      title: "Improve patient care",
+      text: "Focus on what matters most - providing exceptional care to your patients. Streamline operations so you can dedicate more time to clinical excellence.",
+      icon: "faHeart",
+      color1: "#3B82F6",
+      color2: "#22C55E"
+    },
+    {
+      title: "Cultivate a better work culture",
+      text: "Build a supportive environment where clinicians thrive, leading to better retention, satisfaction, and ultimately improved patient outcomes.",
+      icon: "faUsers",
+      color1: "#EF4444",
+      color2: "#EC4899"
+    },
+    {
+      title: "Control presenting issues",
+      text: "Choose the types of cases and patient populations you want to focus on, allowing you to specialize and excel in areas that interest you most.",
+      icon: "faStethoscope",
+      color1: "#F97316",
+      color2: "#EAB308"
+    },
+    {
+      title: "Earn a higher income",
+      text: "Grow your practice efficiently to increase revenue while reducing administrative burden, leading to better financial rewards for your hard work.",
+      icon: "faDollarSign",
+      color1: "#8B5CF6",
+      color2: "#22C55E"
+    },
+    {
+      title: "Spend more time with family",
+      text: "Create systems that allow you to be present for your loved ones while still running a successful practice that serves your community.",
+      icon: "faHouse",
+      color1: "#3B82F6",
+      color2: "#22C55E"
     }
-  }}
+  ]}
 />
 
 <Feature

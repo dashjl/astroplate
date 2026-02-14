@@ -5,18 +5,18 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo": "/images/logo-plain.svg",
+    "logo_darkmode": "/images/logo-plain.svg",
     "logo_width": "150",
     "logo_height": "30",
     "logo_text": "Lean Practice"
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": true,
-    "theme_switcher": true,
-    "default_theme": "system",
+    "theme_switcher": false,
+    "default_theme": "light", 
     "pagination": 6,
     "summary_length": 200,
     "blog_folder": "blog"
@@ -29,7 +29,7 @@
   },
 
   "params": {
-    "copyright": "Copyright © 2025 Lean Practice"
+    "copyright": "Copyright © 2026 Lean Practice"
   },
 
   "navigation_button": {

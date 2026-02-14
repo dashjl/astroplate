@@ -1,0 +1,49 @@
+---
+import FeatureListItem from "../components/FeatureListItem.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+export interface Feature {
+  title: string;
+  text: string;
+  icon: string;
+  color1: string;
+  color2: string;
+}
+
+export interface Props {
+  features: Feature[];
+  columns?: string;
+  title?: string;
+  content?: string;
+  index?: number;
+}
+
+const { features, columns, title, content, index = 0 } = Astro.props;
+const columnsNum = parseInt(columns || "3");
+---
+
+<section class={`section ${index % 2 === 0 && "bg-gradient"}`}>
+  <div class="container">
+    <div class="row">
+      {
+        title && (
+          <div class="mb-8 text-center">
+            <h1 set:html={markdownify(title)} class="mb-4 text-h3 lg:text-h1" />
+            {content && <p set:html={markdownify(content)} class="mb-8" />}
+          </div>
+        )
+      }
+      <ul class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${columnsNum} gap-8 md:gap-12 lg:gap-16`}>
+        {features.map((feature) => (
+          <FeatureListItem
+            title={feature.title}
+            text={feature.text}
+            icon={feature.icon}
+            color1={feature.color1}
+            color2={feature.color2}
+          />
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
